@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/extra.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
@@ -19,7 +20,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
+					<h1 id="logo"><a href="index.html">Stereo Panorama <span> by NTU CSIE</span></a></h1>
 					<nav id="nav">
 						<ul>
 							<li class="current"><a href="index.html">Welcome</a></li>
@@ -42,7 +43,7 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="#" class="button special">Sign Up</a></li>
+							<!-- <li><a href="#" class="button special">Sign Up</a></li>-->
 						</ul>
 					</nav>
 				</header>
@@ -59,28 +60,41 @@
 					<div class="inner">
 
 						<header>
-							<h2>TWENTY</h2>
+							<h2>Stereo Panorama</h2>
 						</header>
-						<p>This is <strong>Twenty</strong>, a free
+						<p>We here produce <strong>stereo panorama</strong> 
 						<br />
-						responsive template
+						<strong>pairs</strong> from a hand-held video.
 						<br />
-						by <a href="http://html5up.net">HTML5 UP</a>.</p>
+						<!--by <a href="http://html5up.net">HTML5 UP</a>.-->
+						</p>
 						<footer>
 							<ul class="buttons vertical">
-								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+								<li><a href="#video" class="button fit scrolly">How we made it</a></li>
 							</ul>
 						</footer>
 
 					</div>
 
 				</section>
+				
+				<iframe id = "video" width="1280" height="720" src="https://www.youtube.com/embed/Cxn1sXO0vhw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 			<!-- Main -->
 				<article id="main">
 
 					<header class="special container">
 						<span class="icon fa-bar-chart-o"></span>
+
+						<p>First we undistort camera frames, and warp them to a cylinder surface.<br />
+						Next, the strips for left- and right-eye are extracted.<br />
+						Finally, we use optical flow-based method to blend strips from adjacent frames.
+						</p>
+						<p>The final panoramas for left- and right-eye, and the corresponding re-cyan stereoscopy are presented in the demo video.
+						<br />
+						Additionally, we generate a multi-view panorama, to easily visualize the changing of scene from different viewpoints.
+						</p>
+						<!--
 						<h2>As this is my <strong>twentieth</strong> freebie for HTML5 UP
 						<br />
 						I decided to give it a really creative name.</h2>
@@ -89,10 +103,10 @@
 						it's minimally designed, fully responsive, built on HTML5/CSS3/<strong>skel</strong>,
 						and, like all my stuff,
 						<br />
-						released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0</a> license. Have fun!</p>
+						released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0</a> license. Have fun!</p>-->
 					</header>
 
-					<!-- One -->
+					<!-- One 
 						<section class="wrapper style2 container special-alt">
 							<div class="row 50%">
 								<div class="8u 12u(narrower)">
@@ -122,8 +136,8 @@
 								</div>
 							</div>
 						</section>
-
-					<!-- Two -->
+					-->
+					<!-- Two 
 						<section class="wrapper style1 container special">
 							<div class="row">
 								<div class="4u 12u(narrower)">
@@ -161,7 +175,7 @@
 								</div>
 							</div>
 						</section>
-
+					-->
 					<!-- Three -->
 						<section class="wrapper style3 container special">
 

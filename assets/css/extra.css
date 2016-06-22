@@ -3,6 +3,11 @@
 		width: 100%;
 		height: 720;
 }
+#proposal{
+	display: inline-block;
+		width: 100%;
+		height: 720;
+}
 .main-icon{
 	position: relative;
 	top: -2em;

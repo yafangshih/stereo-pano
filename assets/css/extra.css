@@ -46,11 +46,12 @@
 .warpimage{
 
 	position: relative;
-	width: 100%;
+	width: 90%;
 	height: auto;
 	background-color: rgba(0,0,0,0);
 
 }
+
 .pairimage{
 
 	position: relative;

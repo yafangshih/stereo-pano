@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Twenty by HTML5 UP</title>
+		<title>Stereo Panorama</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -62,9 +62,9 @@
 						<header>
 							<h2>Stereo Panorama</h2>
 						</header>
-						<p>We here produce <strong>stereo panorama</strong> 
+						<p><strong>Stereo panoramas</strong> 
 						<br />
-						<strong>pairs</strong> from a hand-held video.
+						from a hand-held video.
 						<br />
 						<!--by <a href="http://html5up.net">HTML5 UP</a>.-->
 						</p>
@@ -78,21 +78,21 @@
 
 				</section>
 				
-				<iframe id = "video" width="1280" height="720" src="https://www.youtube.com/embed/Cxn1sXO0vhw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				<iframe id = "video" height="720" src="https://www.youtube.com/embed/Cxn1sXO0vhw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 			<!-- Main -->
 				<article id="main">
 
 					<header class="special container">
-						<span class="icon fa-bar-chart-o"></span>
+						<!--<span class="icon fa-bar-chart-o"></span>-->
+						<span class = "icon">
+							<img class = "main-icon" src="images/cameraicon.png"/>
+						</span>
 
-						<p>First we undistort camera frames, and warp them to a cylinder surface.<br />
-						Next, the strips for left- and right-eye are extracted.<br />
-						Finally, we use optical flow-based method to blend strips from adjacent frames.
+						<p>We here produce stereo panorama pairs from a hand-held video.<br />
 						</p>
-						<p>The final panoramas for left- and right-eye, and the corresponding re-cyan stereoscopy are presented in the demo video.
-						<br />
-						Additionally, we generate a multi-view panorama, to easily visualize the changing of scene from different viewpoints.
+						<p>
+						The final panoramas for left- and right-eye, and the corresponding re-cyan stereoscopy <br />are presented in the video above. Additionally, we generate a multi-view panorama, <br />to easily visualize the changing of scene from different viewpoints.
 						</p>
 						<!--
 						<h2>As this is my <strong>twentieth</strong> freebie for HTML5 UP
@@ -180,21 +180,31 @@
 						<section class="wrapper style3 container special">
 
 							<header class="major">
-								<h2>Next look at this <strong>cool stuff</strong></h2>
+								<h2><strong>Pipeline</strong></h2>
 							</header>
 
 							<div class="row">
-								<div class="6u 12u(narrower)">
+								<div class="12u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<!--<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>-->
+										<!--	<video class="inputV" controls>
+											<source src="images/rooftop.mp4" type="video/mp4"></video>
+										-->
 										<header>
-											<h3>A Really Fast Train</h3>
+										<h3>Input video</h3>
 										</header>
-										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+										<iframe id="myinput" src="https://www.youtube.com/embed/w5JZmf3ecsc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+										
+										<p>The input is a hand-held video with circular motion. <br />We sample out the frames using <a href="https://ffmpeg.org/">FFmpeg</a>.</p> 
+										<p>We use the video data provided by Megastereo.<br /><small><strong>Richardt, Christian, Yael Pritch, Henning Zimmer, and Alexander Sorkine-Hornung. <br />"Megastereo: Constructing high-resolution stereo panoramas." <br />In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1256-1263. 2013.</strong></small>
+										<br />
+										<a href="http://richardt.name/publications/megastereo/"><small>project page</small></a>
+										</p>
 									</section>
 
 								</div>
+								<!--
 								<div class="6u 12u(narrower)">
 
 									<section>
@@ -206,19 +216,23 @@
 									</section>
 
 								</div>
+							-->
 							</div>
 							<div class="row">
-								<div class="6u 12u(narrower)">
+								<div class="12u 12u(narrower)">
 
 									<section>
-										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 										<header>
-											<h3>Hyperspace Travel</h3>
+											<h3>Preprocessing</h3>
 										</header>
-										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+										<img class="undisimage" src="images/undis.png" alt="" />
+										<p>The camera lens distortions are removed by OpenCV with the GoPro parameters provided in the dataset.<br />
+										The left image above is a frame before undistortion, while the right image is its undistorted result.<br />
+										Bundle adjustment is then performed with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a></p>
 									</section>
 
 								</div>
+								<!--
 								<div class="6u 12u(narrower)">
 
 									<section>
@@ -230,13 +244,148 @@
 									</section>
 
 								</div>
+							-->
 							</div>
+							<div class="row">
+								<div class="12u 12u(narrower)">
 
-							<footer class="major">
+									<section>
+										<header>
+											<h3>Warp to a cylinder space</h3>
+										</header>
+										<img class="warpimage" src="images/warp.png" alt="" />
+										<p>The undistorted frames are warp to a cylinder space with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a>.<br />
+											The world map is showed above.<br />
+											We crop out the frame from the world map, as showed at the right-side.<br />
+										</p>
+									</section>
+
+								</div>
+								<!--
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>And Another Train</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							-->
+							</div>
+							<div class="row">
+								<div class="12u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3>Extract strips</h3>
+										</header>
+										<!--<img class="warpimage" src="images/blend.png" alt="" />-->
+										<p>
+											As described in Omnistereo, the strips for left- and right-eyes are extracted <br />as the areas shifted an angle left and right from the center of a frame.<br />
+											<small>Peleg, Shmuel, Moshe Ben-Ezra, and Yael Pritch. "Omnistereo: Panoramic stereo imaging." <br />IEEE Transactions on Pattern Analysis and Machine Intelligence 23.3 (2001): 279-290.</small>
+										</p>
+									</section>
+
+								</div>
+								<!--
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>And Another Train</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							-->
+							</div>
+							<div class="row">
+								<div class="12u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3>Flow-based blending</h3>
+										</header>
+										<img class="warpimage" src="images/blend.png" alt="" />
+										<p>
+											As described in Megastereo, optical flows are calculated from adjacent frames.<br />
+
+											Then the motion between two frames are subtracted, and we obtain the net flow:<br />
+											F*_k→l(x) = F_k→l (A_0→k x) − (A_0→l x − A_0→k x)
+											<br />
+											The above images are two adjacent warped frames, the flow between them, and the net flow.
+										</p>
+										<p>
+											We blend the strip areas from two frames as described in Megastereo.<br />
+											S_k(x) = (1−η) · I_k(A_0→k x + η · F_k→l*(x)) + η · I_l(A_0→kx + (1−η) · F_l→k*(x))
+										</p>
+									</section>
+
+								</div>
+								<!--
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>And Another Train</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							-->
+							</div>
+							<div class="row">
+								<div class="12u 12u(narrower)">
+
+									<section>
+										<header>
+											<h3>Result</h3>
+										</header>
+										<img class="pairimage" src="images/pairs.png" alt="" />
+										<p>
+											The left-eye panorama(top) and the right-eye panorama(down). 
+										</p>
+										<img class="disimage" src="images/dis0616.png" alt="" />
+										<p>
+											The disparity map between them. 
+										</p>
+										<img class="pairimage" src="images/RCout0616.png" alt="" />
+										<p>
+											The red-cyan stereoscopy from the panorama pair. 
+										</p>
+										<img class="pairimage" src="images/mov.gif" alt="" />
+										<p>
+											The multi-viewpoint panorama animation. 
+										</p>
+									</section>
+
+								</div>
+								<!--
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>And Another Train</h3>
+										</header>
+										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+									</section>
+
+								</div>
+							-->
+							</div>
+<!--							<footer class="major">
 								<ul class="buttons">
 									<li><a href="#" class="button">See More</a></li>
 								</ul>
-							</footer>
+-->							</footer>
 
 						</section>
 

@@ -2,3 +2,68 @@
 		width: 100%;
 		height: 720;
 }
+.main-icon{
+	position: relative;
+	top: -2em;
+	width: 100px;
+	height: auto;
+	background-color: rgba(0,0,0,0);
+}
+.icon.featured.fa-mobile.fa-lg{
+	top: -12px;
+	margin-bottom: 0px;
+}
+
+.inputvideo{
+  width: 100%;
+  height: 240;
+ 
+}
+
+.inputV{
+	height: 240px;
+  -moz-transform:rotate(270deg);
+  -webkit-transform:rotate(270deg);
+  -o-transform:rotate(270deg);
+  -ms-transform:rotate(270deg);
+  transform:rotate(270deg);
+}
+
+#myinput{
+		width: 420px; 
+		height: 315px;
+}
+
+.undisimage{
+
+	position: relative;
+	width: 50%;
+	height: auto;
+	background-color: rgba(0,0,0,0);
+
+}
+
+.warpimage{
+
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: rgba(0,0,0,0);
+
+}
+.pairimage{
+
+	position: relative;
+	width: 80%;
+	height: auto;
+	background-color: rgba(0,0,0,0);
+
+}
+.disimage{
+
+	position: relative;
+	width: 85%;
+	height: auto;
+	background-color: rgba(0,0,0,0);
+
+}

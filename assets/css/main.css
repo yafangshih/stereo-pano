@@ -9,7 +9,7 @@
 
 /* Reset */
 
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, small, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -1567,7 +1567,7 @@
 
 	body, input, select, textarea {
 		color: #7c8081;
-		font-family: 'Lato', sans-serif;
+		font-family: 'Cambria'; /*, sans-serif;*/
 		font-size: 15pt;
 		font-weight: 300;
 		letter-spacing: 0.025em;
@@ -1590,6 +1590,10 @@
 
 	strong, b {
 		font-weight: 400;
+	}
+
+	small{
+		font-size: 0.8em;
 	}
 
 	p, ul, ol, dl, table, blockquote {
@@ -1619,6 +1623,12 @@
 		font-size: 1.15em;
 		letter-spacing: 0.025em;
 	}
+	
+	h4 {
+		font-size: 1.0em;
+		letter-spacing: 0.025em;
+	}
+
 
 	sub {
 		font-size: 0.8em;
@@ -3014,6 +3024,11 @@
 
 			h3 {
 				font-size: 1em;
+				letter-spacing: 0.025em;
+			}
+
+			h4 {
+				font-size: 0.75em;
 				letter-spacing: 0.025em;
 			}
 

@@ -1567,7 +1567,7 @@
 
 	body, input, select, textarea {
 		color: #7c8081;
-		font-family: 'Cambria'; /*, sans-serif;*/
+		font-family: 'PT Sans'; /*, sans-serif;*/
 		font-size: 15pt;
 		font-weight: 300;
 		letter-spacing: 0.025em;
@@ -1579,9 +1579,10 @@
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-		color: #3fb1a3;
+		/*color: #3fb1a3;*/
+		color: #585858;
 		text-decoration: none;
-		border-bottom: dotted 1px;
+/*		border-bottom: dotted 1px;*/
 	}
 
 		a:hover {
@@ -1826,6 +1827,7 @@
 	.icon {
 		text-decoration: none;
 		position: relative;
+
 	}
 
 		.icon:before {
@@ -2305,7 +2307,7 @@
 			}
 
 				#header.alt nav ul li.active > a, #header.alt nav ul li:hover > a {
-					border: solid 1px;
+					/*border: solid 1px;*/
 				}
 
 /* Dropotron */
@@ -2513,8 +2515,32 @@
 	}
 
 		#cta header {
-			margin-bottom: 2em;
+			margin-bottom: 0em;
+			margin-top: 1em;
 		}
+
+		#cta .copyright {
+			font-size: 0.8em;
+			line-height: 1em;
+			margin-bottom: 1em;
+		}
+
+			#cta .copyright a {
+				color: inherit;
+			}
+
+			#cta .copyright li {
+				display: inline-block;
+				margin-left: 1em;
+				padding-left: 1em;
+				border-left: dotted 1px;
+			}
+
+				#cta .copyright li:first-child {
+					margin: 0;
+					padding: 0;
+					border: 0;
+				}
 
 /* Footer */
 
@@ -2618,7 +2644,7 @@
 		/* CTA */
 
 			#cta {
-				padding: 4em;
+				padding: 1em;
 				background-attachment: scroll;
 			}
 
@@ -3030,6 +3056,7 @@
 			h4 {
 				font-size: 0.75em;
 				letter-spacing: 0.025em;
+				margin-top:0px;
 			}
 
 			p {

@@ -23,9 +23,9 @@
 					<h1 id="logo"><a href="index.html">Stereo Panorama <span> by NTU CSIE</span></a></h1>
 					<nav id="nav">
 						<ul>
+							<li class="current"><a href="#main">Abstract</a></li>
 							<li class="current"><a href="#proposal">Proposal</a></li>
 							<li class="current"><a href="#video">Demo</a></li>
-							<li class="current"><a href="#main">Abstract</a></li>
 							<li class="current"><a href="#pipeline">Pipeline</a></li>
 							<li class="current"><a href="#cta">Contact</a></li>
 							
@@ -76,21 +76,14 @@
 						</p>
 						<footer>
 							<ul class="buttons vertical">
-								<li><a href="#video" class="button fit scrolly">How we made it</a></li>
+								<li><a href="#main" class="button fit scrolly">Tell me more</a></li>
 							</ul>
 						</footer>
 
 					</div>
 
 				</section>
-				<section>
-				<iframe id = "proposal" height="720" src="https://www.youtube.com/embed/6r8a0RCjrDo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-				</section>
-				<section>
-				<iframe id = "video" height="720" src="https://www.youtube.com/embed/Cxn1sXO0vhw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-				</section>
 
-			<!-- Main -->
 				<article id="main">
 
 					<header class="special container">
@@ -104,6 +97,32 @@
 						<p>
 						The final panoramas for left- and right-eye, and the corresponding re-cyan stereoscopy <br />are presented in the video above. Additionally, we generate a multi-view panorama, <br />to easily visualize the changing of scene from different viewpoints.
 						</p>
+
+					</header>
+				</article>
+
+				<section>
+				<iframe id = "proposal" height="720" src="https://www.youtube.com/embed/6r8a0RCjrDo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+				<section>
+				<iframe id = "video" height="720" src="https://www.youtube.com/embed/Cxn1sXO0vhw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<!--<header class="special container">-->
+						<!--<span class="icon fa-bar-chart-o"></span>-->
+					<!--	<span class = "icon">
+							<img class = "main-icon" src="images/cameraicon.png"/>
+						</span>
+
+						<p>We here produce stereo panorama pairs from a hand-held video.<br />
+						</p>
+						<p>
+						The final panoramas for left- and right-eye, and the corresponding re-cyan stereoscopy <br />are presented in the video above. Additionally, we generate a multi-view panorama, <br />to easily visualize the changing of scene from different viewpoints.
+						</p>
+					-->
 						<!--
 						<h2>As this is my <strong>twentieth</strong> freebie for HTML5 UP
 						<br />
@@ -114,7 +133,7 @@
 						and, like all my stuff,
 						<br />
 						released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0</a> license. Have fun!</p>-->
-					</header>
+					<!--</header>-->
 
 					<!-- One 
 						<section class="wrapper style2 container special-alt">
@@ -206,9 +225,9 @@
 										</header>
 										<iframe id="myinput" src="https://www.youtube.com/embed/w5JZmf3ecsc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 										
-										<p>The input is a hand-held video with circular motion. <br />We sample out the frames using <a href="https://ffmpeg.org/">FFmpeg</a>.</p> 
+										<p>The input is a hand-held video with circular motion. We sample out the frames using <a href="https://ffmpeg.org/">FFmpeg</a>.</p> 
 										<p>We use the video data provided by Megastereo.<br />
-											<small><strong>Richardt, Christian, Yael Pritch, Henning Zimmer, and Alexander Sorkine-Hornung. <br />"Megastereo: Constructing high-resolution stereo panoramas." <br />In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1256-1263. 2013.</strong></small>
+											<small><strong>Richardt, Christian, Yael Pritch, Henning Zimmer, and Alexander Sorkine-Hornung. "Megastereo: Constructing high-resolution stereo panoramas." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1256-1263. 2013.</strong></small>
 										<br />
 										<a href="http://richardt.name/publications/megastereo/"><small>project page</small></a>
 										</p>
@@ -237,8 +256,8 @@
 											<h3>Preprocessing</h3>
 										</header>
 										<img class="undisimage" src="images/undiscomp.png" alt="" />
-										<p>The camera lens distortions are removed by OpenCV with the GoPro parameters provided in the dataset.<br />
-										The left image above is a frame before undistortion, while the right image is its undistorted result.<br />
+										<p>The camera lens distortions are removed by OpenCV with the GoPro parameters provided in the dataset. 
+										The left image above is a frame before undistortion, while the right image is its undistorted result. 
 										Bundle adjustment is then performed with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a></p>
 									</section>
 
@@ -265,9 +284,9 @@
 											<h3>Warp to a cylinder space</h3>
 										</header>
 										<img class="warpimage" src="images/warpcomp.png" alt="" />
-										<p>The undistorted frames are warp to a cylinder space with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a>.<br />
-											The world map is showed above.<br />
-											We crop out the frame from the world map, as showed at the right-side.<br />
+										<p>The undistorted frames are warp to a cylinder space with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a>. 
+											The world map is showed above. 
+											We crop out the frame from the world map, as showed at the right-side.
 										</p>
 									</section>
 
@@ -295,8 +314,9 @@
 										</header>
 										<!--<img class="warpimage" src="images/blend.png" alt="" />-->
 										<p>
-											As described in Omnistereo, the strips for left- and right-eyes are extracted <br />as the areas shifted an angle left and right from the center of a frame.<br />
-											<small>Peleg, Shmuel, Moshe Ben-Ezra, and Yael Pritch. "Omnistereo: Panoramic stereo imaging." <br />IEEE Transactions on Pattern Analysis and Machine Intelligence 23.3 (2001): 279-290.</small>
+											As described in Omnistereo, the strips for left- and right-eyes are extracted as the areas shifted an angle left and right from the center of a frame.
+											<br />
+											<small><strong>Peleg, Shmuel, Moshe Ben-Ezra, and Yael Pritch. "Omnistereo: Panoramic stereo imaging." IEEE Transactions on Pattern Analysis and Machine Intelligence 23.3 (2001): 279-290.</strong></small>
 										</p>
 									</section>
 
@@ -324,7 +344,7 @@
 										</header>
 										<img class="warpimage" src="images/blendcomp.png" alt="" />
 										<p>
-											As described in Megastereo, optical flows are calculated from adjacent frames.<br />
+											As described in Megastereo, optical flows are calculated from adjacent frames.
 
 											Then the motion between two frames are subtracted, and we obtain the net flow:<br />
 											F*_k→l(x) = F_k→l (A_0→k x) − (A_0→l x − A_0→k x)

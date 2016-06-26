@@ -1847,14 +1847,14 @@
 			border: 0;
 			border-radius: 100%;
 			display: inline-block;
-			font-size: 1.25em;
-			height: 2.25em;
+			font-size: 1.0em;
+			height: 1.6em;
 			left: 0;
-			line-height: 2.25em;
+			line-height: 1.6em;
 			text-align: center;
 			text-decoration: none;
 			top: 0;
-			width: 2.25em;
+			width: 1.6em;
 		}
 
 			.icon.circle:hover {
@@ -1895,6 +1895,15 @@
 
 				.icon.circle.fa-github:hover {
 					background: #e1b89b;
+				}
+
+			.icon.circle.fa-linkedin {
+				background: #1e87be;
+				color: #fff;
+			}
+
+				.icon.circle.fa-linkedin:hover {
+					background: #2197d4;
 				}
 
 			.icon.circle.fa-dribbble {

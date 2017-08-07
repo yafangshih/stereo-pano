@@ -20,12 +20,12 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1 id="logo"><a href="index.html">Stereo Panorama <span> by NTU CSIE</span></a></h1>
+					<h1 id="logo"><a href="index.html">Stereo Panorama</a></h1>
 					<nav id="nav">
 						<ul>
 							<li class="current"><a href="#main">Abstract</a></li>
 <!--							<li class="current"><a href="#proposal">Proposal</a></li>-->
-							<li class="current"><a href="#video">Demo</a></li>
+							<li class="current"><a href="#video">Video</a></li>
 							<li class="current"><a href="#pipeline">Pipeline</a></li>
 							<li class="current"><a href="#cta">Contact</a></li>
 							
@@ -74,11 +74,11 @@
 						<br />
 						<!--by <a href="http://html5up.net">HTML5 UP</a>.-->
 						</p>
-						<footer>
+<!--						<footer>
 							<ul class="buttons vertical">
 								<li><a href="#main" class="button fit scrolly">Tell me more</a></li>
 							</ul>
-						</footer>
+						</footer>-->
 
 					</div>
 
@@ -87,10 +87,9 @@
 				<article id="main">
 
 					<header class="special container">
-						<!--<span class="icon fa-bar-chart-o"></span>-->
-						<span class = "icon">
+<!--						<span class = "icon">
 							<img class = "main-icon" src="images/cameraicon.png"/>
-						</span>
+						</span>-->
 
 						<p>We here produce stereo panorama pairs from a hand-held video.<br />
 						</p>
@@ -226,10 +225,7 @@
 										<iframe id="myinput" src="https://www.youtube.com/embed/w5JZmf3ecsc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 										
 										<p>The input is a hand-held video with circular motion. We sample out the frames using <a href="https://ffmpeg.org/">FFmpeg</a>.</p> 
-										<p>We use the video data provided by Megastereo.<br />
-											<small><strong>Richardt, Christian, Yael Pritch, Henning Zimmer, and Alexander Sorkine-Hornung. "Megastereo: Constructing high-resolution stereo panoramas." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1256-1263. 2013.</strong></small>
-										<br />
-										<a href="http://richardt.name/publications/megastereo/"><small>project page</small></a>
+										<p>We use the video data provided by <a href="http://richardt.name/publications/megastereo/">Megastereo</a> (Megastereo: Constructing high-resolution stereo panoramas by Richardt, Christian, Yael Pritch, Henning Zimmer, and Alexander Sorkine-Hornung in CVPR 2013)
 										</p>
 									</section>
 
@@ -256,8 +252,8 @@
 											<h3>Preprocessing</h3>
 										</header>
 										<img class="undisimage" src="images/undiscomp.png" alt="" />
-										<p>The camera lens distortions are removed by OpenCV with the GoPro parameters provided in the dataset. 
-										The left image above is a frame before undistortion, while the right image is its undistorted result. 
+										<p>The camera lens distortion are removed by OpenCV with the GoPro parameters. 
+										The left image above is an input frame and the right image above is its result after undistortion. 
 										Bundle adjustment is then performed with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a></p>
 									</section>
 
@@ -284,9 +280,8 @@
 											<h3>Warp to a cylinder space</h3>
 										</header>
 										<img class="warpimage" src="images/warpcomp.png" alt="" />
-										<p>The undistorted frames are warp to a cylinder space with the source codes provided by <a href="http://www.loria.fr/~jdumas/archives/school-projects/stereo-panorama-stitchin/">Jérémie Dumas</a>. 
-											The world map is showed above. 
-											We crop out the frame from the world map, as showed at the right-side.
+										<p>The undistorted frames are warped to a cylinder space and above left is the resulting world map.
+										We crop out the frame from the world map, as showed at the right-side.
 										</p>
 									</section>
 
@@ -314,9 +309,8 @@
 										</header>
 										<!--<img class="warpimage" src="images/blend.png" alt="" />-->
 										<p>
-											As described in Omnistereo, the strips for left- and right-eyes are extracted as the areas shifted an angle left and right from the center of a frame.
-											<br />
-											<small><strong>Peleg, Shmuel, Moshe Ben-Ezra, and Yael Pritch. "Omnistereo: Panoramic stereo imaging." IEEE Transactions on Pattern Analysis and Machine Intelligence 23.3 (2001): 279-290.</strong></small>
+											As described in Omnistereo (Omnistereo: Panoramic stereo imaging by Peleg, Shmuel, Moshe Ben-Ezra, and Yael Pritch in PAMI 2001), the strips for left- and right-eyes are extracted as the areas shifted an angle left and right from the center of a frame.
+											
 										</p>
 									</section>
 
@@ -344,15 +338,15 @@
 										</header>
 										<img class="warpimage" src="images/blendcomp.png" alt="" />
 										<p>
-											As described in Megastereo, optical flows are calculated from adjacent frames.
+											As the flow-based image blending method described in Megastereo, optical flows are first calculated from adjacent frames.
 
-											Then the motion between two frames are subtracted, and we obtain the net flow:<br />
+											We substract the motion between two frames and obtain the net flow:</p><p>
 											F*_k→l(x) = F_k→l (A_0→k x) − (A_0→l x − A_0→k x)
-											<br />
-											The above images are two adjacent warped frames, the flow between them, and the net flow.
+											</p><p>
+											The above images are (from left to right) two adjacent warped frames, the flow between them, and the net flow.
 										</p>
 										<p>
-											We blend the strip areas from two frames as described in Megastereo.<br />
+											We blend the strip areas from two frames as:</p><p>
 											S_k(x) = (1−η) · I_k(A_0→k x + η · F_k→l*(x)) + η · I_l(A_0→kx + (1−η) · F_l→k*(x))
 										</p>
 									</section>
@@ -381,7 +375,7 @@
 										</header>
 										<img class="pairimage" src="images/pairscomp.png" alt="" />
 										<p>
-											The left-eye panorama(top) and the right-eye panorama(down). 
+											The left-eye panorama (top) and the right-eye panorama (down). 
 										</p>
 										<img class="disimage" src="images/dis0616.png" alt="" />
 										<p>
@@ -431,10 +425,10 @@
 						<ul id = "member-list">
 						<li>
 							<div class= "member">
-								<img src="images/yafang.png"/>
+								<a href="https://yafangshih.github.io/"><img src="images/yafang.png"/></a>
 								<p> Ya Fang Shih </p>
 								<ul class="icons">
-								<li><a href="https://www.facebook.com/yafang.shih.tw" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+								<li><a href="https://www.facebook.com/yfshih.tw" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
 								<li><a href="https://github.com/yafangshih" class="icon circle fa-github"><span class="label">Github</span></a></li>
 								<li><a href="https://www.linkedin.com/in/ya-fang-shih-b73837104" class="icon circle fa-linkedin"><span class="label">Linkedin</span></a></li>
 								</ul>
@@ -460,9 +454,9 @@
 					</footer>
 -->
 
-					<ul class="copyright">
+<!--					<ul class="copyright">
 						<li>&copy; NTU CSIE</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+					</ul>-->
 				</section>
 
 			<!-- Footer 

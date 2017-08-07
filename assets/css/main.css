@@ -1,5 +1,7 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,900");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+
 
 /*
 	Twenty by HTML5 UP
@@ -1567,7 +1569,7 @@
 
 	body, input, select, textarea {
 		color: #7c8081;
-		font-family: 'Lato', sans-serif;
+		font-family: Palatino Linotype, Helvetica Neue, Helvetica, Arial, sans-serif; /*'Lato', sans-serif;*/
 		font-size: 15pt;
 		font-weight: 300;
 		letter-spacing: 0.025em;
@@ -1597,7 +1599,10 @@
 		font-size: 0.8em;
 	}
 
-	p, ul, ol, dl, table, blockquote {
+	p{
+		margin: 0 0 1em 0;
+	}
+	ul, ol, dl, table, blockquote {
 		margin: 0 0 2em 0;
 	}
 
@@ -1666,21 +1671,21 @@
 	}
 
 	header.special {
-		margin-bottom: 5em;
-		padding-top: 7em;
+/*		margin-bottom: 5em;
+		padding-top: 7em;*/
 		position: relative;
 		text-align: center;
 	}
 
 		header.special:before, header.special:after {
-			border-bottom: solid 1.5px;
+/*			border-bottom: solid 1.5px;
 			border-top: solid 1.5px;
 			content: '';
 			height: 7px;
 			opacity: 0.1;
 			position: absolute;
 			top: 1.75em;
-			width: 43%;
+			width: 43%;*/
 		}
 
 		header.special:before {
@@ -2414,15 +2419,15 @@
 	}
 
 	#banner {
-		background-attachment: /*scroll, scroll,*/ scroll, fixed;
+		background-attachment: scroll, fixed; /*scroll, scroll,*/ 
 		background-color: #645862;
-		background-image: /*url("images/light-bl.svg"), url("images/light-br.svg"), */url("images/overlay.png"),  url("../../images/RCout0616comp.png");
-		background-position: /*bottom left, bottom right,*/ top left, top center;
-		background-repeat: /*no-repeat, no-repeat,*/ repeat, no-repeat;
-		background-size: /*25em, 25em,*/ auto, cover;
+		background-image: url("images/overlay.png"),  url("../../images/RCout0616comp.png"); /*url("images/light-bl.svg"), url("images/light-br.svg"), */
+		background-position:  top left, top center; /*bottom left, bottom right,*/
+		background-repeat:  repeat, no-repeat; /*no-repeat, no-repeat,*/
+		background-size:  auto, cover; /*25em, 25em,*/
 		color: #fff;
 		cursor: default;
-		padding: 6em 0;
+		padding: 4em 0;
 		text-align: center;
 	}
 
@@ -2439,7 +2444,7 @@
 			color: #fff;
 			display: inline-block;
 			opacity: 0;
-			padding: 3em;
+			padding: 1em;
 			text-align: center;
 		}
 
@@ -2454,7 +2459,7 @@
 				#banner .inner header h2 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
-					font-size: 2.5em;
+					font-size: 2em;
 					font-weight: 900;
 					letter-spacing: 0.2em;
 					margin: 0;
@@ -2476,7 +2481,7 @@
 				}
 
 			#banner .inner footer {
-				margin: 2em 0 0 0;
+				margin: 0em 0 0 0;
 			}
 
 /* Main */
@@ -2542,7 +2547,7 @@
 				display: inline-block;
 				margin-left: 1em;
 				padding-left: 1em;
-				border-left: dotted 1px;
+/*				border-left: dotted 1px;*/
 			}
 
 				#cta .copyright li:first-child {
@@ -2573,7 +2578,7 @@
 				display: inline-block;
 				margin-left: 1em;
 				padding-left: 1em;
-				border-left: dotted 1px;
+/*				border-left: dotted 1px;*/
 			}
 
 				#footer .copyright li:first-child {
@@ -2595,8 +2600,8 @@
 		/* Section/Article */
 
 			header.special {
-				padding-top: 5.5em;
-				margin-bottom: 4em;
+/*				padding-top: 5.5em;
+				margin-bottom: 4em;*/
 			}
 
 	}
@@ -2688,8 +2693,8 @@
 			}
 
 			header.special {
-				padding-left: 2.5em;
-				padding-right: 2.5em;
+/*				padding-left: 2.5em;
+				padding-right: 2.5em;*/
 			}
 
 			footer.major {
@@ -2722,7 +2727,7 @@
 		/* Banner */
 
 			#banner {
-				background-size: 15em, 15em, auto, cover;
+				background-size: auto, cover; /*15em, 15em, */
 			}
 
 		/* Main */
@@ -2759,8 +2764,8 @@
 			}
 
 			header.special {
-				margin-bottom: 4em;
-				padding-top: 5em;
+/*				margin-bottom: 4em;
+				padding-top: 5em;*/
 			}
 
 				header.special:before, header.special:after {
@@ -3083,9 +3088,9 @@
 				}
 
 				header.special {
-					margin-bottom: 3em;
+/*					margin-bottom: 3em;
 					padding-left: 1.5em;
-					padding-right: 1.5em;
+					padding-right: 1.5em;*/
 				}
 
 					header.special:before, header.special:after {
@@ -3170,7 +3175,7 @@
 		/* Banner */
 
 			#banner {
-				background-size: /*10em, 10em, */auto, cover;
+				background-size: auto, cover; /*10em, 10em, */
 				padding: 6em 0;
 			}
 
